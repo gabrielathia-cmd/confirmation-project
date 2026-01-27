@@ -8,4 +8,9 @@ public class CompanysControllers {
     public String testingCloud() {
         return "Hello World!";
     }
+
+    @GetMapping("/legal")
+    public String testingCloud2() {
+        return "Se pá que a parada ficou bem maneira, né? Meu mano predela, meu mano predela";
+    }
 }
