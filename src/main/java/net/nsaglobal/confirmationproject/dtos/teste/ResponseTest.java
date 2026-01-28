@@ -1,8 +1,10 @@
 package net.nsaglobal.confirmationproject.dtos.teste;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Getter;
 import lombok.Setter;
 
+@JsonPropertyOrder({"id", "name", "description", "value"})
 public class ResponseTest {
 
 //Attributes

@@ -40,7 +40,13 @@ public class CompanyControllers {
     }
 
     @GetMapping("/buscar-{id}")
-    public ResponseEntity<ResponseTest> queryTest(@PathVariable int id, @RequestParam(required = false) String details) {
+    public ResponseEntity<ResponseTest> queryTest(@PathVariable long id) {
+        ResponseTest responseTest = service.searchEntity(id);
+        return ResponseEntity.ok(responseTest);
+    }
+
+    @GetMapping("/dobrar-{id}")
+    public ResponseEntity<ResponseTest> doubleTest(@PathVariable long id) {
         ResponseTest responseTest = service.searchEntity(id);
         return ResponseEntity.ok(responseTest);
     }

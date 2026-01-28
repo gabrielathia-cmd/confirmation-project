@@ -48,4 +48,10 @@ public class TesteService {
         EntidadeTeste entidadeTeste = getEntidadeTesteById(id);
         return new ResponseTest(entidadeTeste.getId(), entidadeTeste.getName(), entidadeTeste.getDescription(), entidadeTeste.getValue());
     }
+
+    public ResponseTest doubleValue(long id) {
+        EntidadeTeste entity = getEntidadeTesteById(id);
+        entity.doubleValue();
+        return new ResponseTest(entity.getId(), entity.getName(), entity.getDescription(), entity.getValue());
+    }
 }
