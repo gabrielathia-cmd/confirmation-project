@@ -47,7 +47,7 @@ public class CompanyControllers {
 
     @GetMapping("/dobrar-{id}")
     public ResponseEntity<ResponseTest> doubleTest(@PathVariable long id) {
-        ResponseTest responseTest = service.searchEntity(id);
+        ResponseTest responseTest = service.doubleValue(id);
         return ResponseEntity.ok(responseTest);
     }
 }
