@@ -1,0 +1,8 @@
+POST https://confirmation-project-production.up.railway.app/criar-teste
+Content-Type: application/json
+
+{
+  "name": "Teste 01",
+  "description": "Teste criado via arquivo .http",
+  "value": 150.75
+}

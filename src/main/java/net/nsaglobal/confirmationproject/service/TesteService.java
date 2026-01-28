@@ -43,4 +43,9 @@ public class TesteService {
         EntidadeTeste finalEntity = createOrUpdateRepo(entity);
         return new ResponseTest(finalEntity.getId(), finalEntity.getName(), finalEntity.getDescription(), finalEntity.getValue());
     }
+
+    public ResponseTest searchEntity(long id) {
+        EntidadeTeste entidadeTeste = getEntidadeTesteById(id);
+        return new ResponseTest(entidadeTeste.getId(), entidadeTeste.getName(), entidadeTeste.getDescription(), entidadeTeste.getValue());
+    }
 }

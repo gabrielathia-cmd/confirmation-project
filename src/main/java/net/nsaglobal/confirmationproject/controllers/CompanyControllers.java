@@ -30,12 +30,18 @@ public class CompanyControllers {
 
     @GetMapping("/legal")
     public String testingCloud2() {
-        return "Se pá que a parada ficou bem maneira, né? Meu mano predela, meu mano predela";
+        return "Cool";
     }
 
     @PostMapping("/criar-teste")
     public ResponseEntity<ResponseTest> createTest(@RequestBody RequestTest request) {
         ResponseTest responseTest = service.saveEntity(request);
+        return ResponseEntity.ok(responseTest);
+    }
+
+    @GetMapping("/buscar-{id}")
+    public ResponseEntity<ResponseTest> queryTest(@PathVariable int id, @RequestParam(required = false) String details) {
+        ResponseTest responseTest = service.searchEntity(id);
         return ResponseEntity.ok(responseTest);
     }
 }
