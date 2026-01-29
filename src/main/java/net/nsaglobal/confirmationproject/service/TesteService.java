@@ -13,7 +13,7 @@ public class TesteService {
 
 //Attribute
 
-    private TesteRepository repo;
+    private final TesteRepository repo;
 
 //Constructor - Dependency Injection
 
@@ -52,6 +52,7 @@ public class TesteService {
     public ResponseTest doubleValue(long id) {
         EntidadeTeste entity = getEntidadeTesteById(id);
         entity.doubleValue();
+        createOrUpdateRepo(entity);
         return new ResponseTest(entity.getId(), entity.getName(), entity.getDescription(), entity.getValue());
     }
 }
