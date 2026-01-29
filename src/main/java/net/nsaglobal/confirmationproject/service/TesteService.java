@@ -24,9 +24,7 @@ public class TesteService {
 
 //Methods - DataBase
 
-    private EntidadeTeste createOrUpdateRepo(EntidadeTeste entidade) {
-        return repo.save(entidade);
-    }
+    private EntidadeTeste createOrUpdateRepo(EntidadeTeste entity) {return repo.save(entity);}
 
     private EntidadeTeste getEntidadeTesteById(long id) {
         return repo.findById(id)
