@@ -25,29 +25,33 @@ public class Visa {
     @Setter
     private Status status;
 
+    @Getter
+    @Setter
+    private ArrayList<HashMap<String, String>> flightsData;
+
 //Constructor
 
     public Visa() {
-        status = Status.SEARCHABLE;
+        status = Status.UNSEARCHABLE;
+        this.flightsData = new ArrayList<HashMap<String, String>>();
     }
 
 //Methods
 
 //    public ArrayList<HashMap<String, String>> returnFlightsData(String line) {
-//       if(line.equals(this.lineBeforeDeparture)) {
-//    }
-//            markAsSearchable();
+//        defineSearchCapabilityPickUp(line);
+//        if(this.status == Status.SEARCHABLE) {
 //
 //        }
 //    }
 
 //Private Methods
 
-    private void markAsSearchable() {
-        this.status = Status.SEARCHABLE;
-    }
-
-    private void markAsUnsearchable() {
-        this.status = Status.UNSEARCHABLE;
+    private void defineSearchCapabilityPickUp(String line) {
+        if(line.equals(this.lineBeforePickUp)) {
+            this.status = Status.SEARCHABLE;
+        } else if (line.startsWith("Executive:")) {
+            this.status = Status.UNSEARCHABLE;
+        }
     }
 }
